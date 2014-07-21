@@ -1,0 +1,20 @@
+{
+  "name": "extract-from-tarball",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/extract-from-tarball",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/extract-from-tarball.git"
+  },
+  "dependencies": {
+    "tar-stream": "~0.4.4",
+    "concat-stream": "~1.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
