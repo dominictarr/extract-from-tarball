@@ -1,7 +1,7 @@
 {
   "name": "extract-from-tarball",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dominictarr/extract-from-tarball",
   "repository": {
     "type": "git",
