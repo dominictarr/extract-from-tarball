@@ -37,7 +37,6 @@ exports = module.exports = function (input, matchers, cb) {
   zstream.pipe(extract)
 
   if(Buffer.isBuffer(input)) {
-    console.log('EXTRACT >FROM BUFFER', input.length)
     zstream.write(input)
     zstream.end()
   }
