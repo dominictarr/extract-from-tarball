@@ -12,7 +12,6 @@ exports = module.exports = function (input, matchers, cb) {
   var extract = tar.extract()
     .on('error', done)
     .on('entry', function (header, stream, next) {
-
       for(var k in matchers) {
         if(matchers[k].test(header.name))
           return (function (matcher, i) {
@@ -24,6 +23,7 @@ exports = module.exports = function (input, matchers, cb) {
             }))
           })(matchers[k], k)
       }
+      stream.resume()
       next()
     })
     .on('finish', done)
@@ -37,6 +37,7 @@ exports = module.exports = function (input, matchers, cb) {
   zstream.pipe(extract)
 
   if(Buffer.isBuffer(input)) {
+    console.log('EXTRACT >FROM BUFFER', input.length)
     zstream.write(input)
     zstream.end()
   }
